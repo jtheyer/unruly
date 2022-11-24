@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "robotframework-lsp",
+            "name": "Robot Framework: Launch .robot file",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": "${file}",
+            "terminal": "none",
+            "env": {
+                "CHROME_DEBUGGER_ADDRESS": "Enable"
+                // "LOG_NON_200_CODES" : "True",
+            },
+            "args": [
+                "--outputdir=${workspaceFolder}\\output",
+                "-P ${workspaceFolder}",
+                "-P ${workspaceFolder}\\src",
+            ]
+        },
+        {
+            "name": "Localhost client",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://www.google.com",
+            // "webRoot": "${workspaceRoot}/app/src/views",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--disable-web-security",
+                "--allow-insecure-localhost"]
+        },
+    ]
+}
